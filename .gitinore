@@ -1,8 +1,8 @@
 # Editor directories and files
-.idea
-.vscode
+*.idea
+*.vscode
 *.suo
 *.ntvs*
-*.njsproj
+*.csproj
 *.sln
-.gitignore
+*.gitignore
