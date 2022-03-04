@@ -39,5 +39,6 @@
     "*.tcc": "cpp",
     "type_traits": "cpp",
     "string": "cpp"
-  }
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
