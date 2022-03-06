@@ -7,24 +7,30 @@ class Solution
 public:
     vector<int> goodDaysToRobBank(vector<int> &security, int time)
     {
-        vector<int> res;
-        for (int i = time; i < security.size(); i++)
+        int n = security.size();
+        vector<int> left(n);
+        vector<int> right(n);
+        for (int i = 1; i < n; i++)
         {
-            vector<int> l, r;
-            for (auto j = i - time; j <= time; j++)
+            if (security[i] <= security[i - 1])
             {
-                l.push_back(security[j]);
+                left[i] = left[i - 1] + 1;
             }
-            for (auto j = time; j <= time; j++)
+            if (security[n - i - 1] <= security[n - i])
             {
-                r.push_back(security[j]);
-            }
-            if (!is_sorted(l.begin(), l.end()) && is_sorted(r.begin(), r.end()))
-            {
-                res.push_back(security[i]);
+                right[n - i - 1] = right[n - i] + 1;
             }
         }
-        return res;
+
+        vector<int> ans;
+        for (int i = time; i < n - time; i++)
+        {
+            if (left[i] >= time && right[i] >= time)
+            {
+                ans.emplace_back(i);
+            }
+        }
+        return ans;
     }
 };
 
@@ -33,5 +39,9 @@ int main()
     vector<int> security{5, 3, 3, 3, 5, 6, 2};
     int time = 2;
     Solution s1;
-    cout << s1.goodDaysToRobBank(security, time) << endl;
+    vector<int> s2 = s1.goodDaysToRobBank(security, time);
+    for (int i = 0; i < s2.size(); i++)
+    {
+        cout << s2[i];
+    }
 }
