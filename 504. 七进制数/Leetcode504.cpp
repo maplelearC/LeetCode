@@ -1,9 +1,12 @@
 //
 // Created by 24191 on 2022/3/7.
 //
-#inlcude<iostream>
-using  namespace  std;
 
+#include<iostream>
+#include <algorithm>
+#include <string>
+
+using namespace std;
 
 class Solution {
 public:
@@ -26,5 +29,9 @@ public:
     }
 };
 
-
-
+int main() {
+    int num = 100;
+    Solution s1;
+    cout << s1.convertToBase7(num) << endl;
+    return 0;
+}
