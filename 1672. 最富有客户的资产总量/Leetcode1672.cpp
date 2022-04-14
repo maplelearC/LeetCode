@@ -1,0 +1,36 @@
+//
+// Created by 24191 on 2022/4/14.
+//
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Solution
+{
+public:
+    int maximumWealth(vector<vector<int>> &accounts)
+    {
+        int ans;
+        for (int i = 0; i < accounts.size(); i++)
+        {
+            int sum = 0;
+            for (int j = 0; j < accounts[0].size(); j++)
+            {
+                sum += accounts[i][j];
+            }
+            ans = max(ans, sum);
+        }
+        return ans;
+    }
+};
+
+int main()
+{
+    vector <vector<int>> accounts{{1, 3},
+                                  {7, 3},
+                                  {3, 5}};
+    Solution s1;
+    cout << s1.maximumWealth(accounts);
+    return 0;
+}
