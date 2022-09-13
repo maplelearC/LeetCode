@@ -26,7 +26,6 @@ public:
                 for (int i = l; i < r; i++)
                 {
                     swap(nums[i], nums[i + 1]);
-
                 }
                 r--;
             }
