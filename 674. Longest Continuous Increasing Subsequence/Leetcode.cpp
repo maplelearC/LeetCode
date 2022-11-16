@@ -40,7 +40,7 @@ public:
 int main()
 {
     Solution s1;
-    vector<int> nums{2, 2, 2, 2, 2};
+    vector<int> nums{1, 3, 5, 4, 7};
     cout << s1.findLengthOfLCIS(nums);
     return 0;
 }
